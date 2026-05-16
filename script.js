@@ -167,7 +167,7 @@ console.log(averageAge);
 
 function incrementAge(obj) {
     // If age doesn't exist, create it
-    if (!obj.age) {
+    if (obj.age === undefined) {
         obj.age = 0;
     }
 
@@ -190,7 +190,7 @@ console.log(incrementAge(person1)); // The original object is modified.
 function incrementAgeCopy(obj) {
     const copy = {
         ...obj,
-        age: obj.age ? obj.age + 1 : 0,
+        age: obj.age !== undefined ? obj.age + 1 : 1,
         updated_at: new Date()
     };
 
@@ -209,3 +209,39 @@ console.log(person2);  // But original stays: { name: "Bob", age: 25 }
 
 // ...obj copies all properties
 
+// ======================================================
+// Part 4: Thinking Practically
+// ======================================================
+
+// Practical application:
+//
+// Functions allow us to reuse code and avoid repetition.
+// Array methods like map(), filter(), reduce(), and sort()
+// help process data efficiently.
+//
+// In real-world applications, these concepts are used for:
+//
+// - Processing user data
+// - Transforming API responses
+// - Updating database records
+// - Calculating statistics
+// - Building reusable application logic
+//
+// These skills will be useful in the upcoming SBA because
+// they help organize code into small, reusable pieces.
+
+
+// ======================================================
+// Part 5: Thinking Back
+// ======================================================
+
+// Reflection:
+//
+// Previous scripts could be improved by turning repeated
+// logic into reusable functions.
+//
+// Parameters would allow different inputs, making the
+// functions flexible and reusable.
+//
+// Helper functions could break larger tasks into smaller,
+// easier-to-maintain pieces.
